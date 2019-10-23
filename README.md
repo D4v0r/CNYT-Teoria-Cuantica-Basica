@@ -7,7 +7,16 @@
  - Mantener el archivo complejos.py en la carpeta donde quiera ejecutar el archivo experimentos.py
  
 ### Contenido:
- -
+ - Función para hallar las probabilidades de hallar una particula en dererminadas posiciones de una recta
+   ```
+   particula_en_una_recta(n, vi):
+    """
+    Retorna un vector de probabilidades P.
+    Parametros:
+        n: Número de puntos sobre la recta.
+        vi: Vector de estado inicial.
+    """
+   ```
  -
  -
 
