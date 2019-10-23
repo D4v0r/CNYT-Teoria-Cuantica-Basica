@@ -27,7 +27,9 @@
         vi: vector de estado inicial.
     """
    ```
- -
+ - Función para hallar los valores propios y el vector propio de un observable:
+   ```
+   ```
 
 ### Acerca De
  
