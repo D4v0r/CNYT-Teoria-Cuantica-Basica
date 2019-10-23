@@ -17,7 +17,16 @@
         vi: Vector de estado inicial.
     """
    ```
- -
+ - Función para hallar las estadisticas de un observable:
+   ```
+    calculadora_estadistica_observables(o, vi):
+    """
+    Retorna el valor eperado E y la varianza S del observable
+    Parametros:
+        o: observable.
+        vi: vector de estado inicial.
+    """
+   ```
  -
 
 ### Acerca De
