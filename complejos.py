@@ -299,6 +299,20 @@ def productoTensor(A,B):
             valorB += 1
     return aux
 
+def identidad(n):
+    '''Retorna la matriz idenidad en C*n'''
+    x = [[(0,0) for i in range(n)] for j in range(n)]
+    for i in range(n):
+        x[i][i] = (1,0)
+    return x
+
+def producto_interno_vectorial(vector1,vector2):
+    '''Se ingresan 2 vectores complejos de longitud n, retorna el producto interno entre estos'''
+    if len(vector1) != len(vector2): raise 'Los vectores no tienen la misma longitud, su producto interno no esta definido'
+    aux = (0,0)
+    for i in range(len(vector1)): 
+        aux = suma(aux, producto(vector1[i],vector2[i]))
+    return aux;
 
 
         
