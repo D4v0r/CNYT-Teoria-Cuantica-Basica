@@ -148,6 +148,13 @@ def matriz_x_escalar(matrizA, escalar):
     matrizB = [vector_x_escalar(vector, escalar) for vector in matrizA]
     return matrizB
 
+def modulo_vector(V):
+    '''Retorna el Modulo de un vector V complejo'''
+    sumatoria = 0
+    for complejo in V:
+        sumatoria += modulo(complejo)**2
+    return (sumatoria**0.5)
+
 def matriz_transpuesta(matriz):
     '''Retorna la matriz Transpuesta'''
     temp = []
@@ -291,4 +298,8 @@ def productoTensor(A,B):
             valorA +=1
             valorB += 1
     return aux
+
+
+
+        
 
