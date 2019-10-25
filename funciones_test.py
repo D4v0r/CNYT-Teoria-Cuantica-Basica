@@ -21,7 +21,8 @@ class Test_funciones(unittest.TestCase):
              [(-7/2,0), (0,1), (0,1/2), (0,0)]]
         
         vi = [(-2, 1), (1, 0), (0,-1), (3,2)]
-        print(f.estadisticas_observable(o, vi))
+        esperado = (1.9, 13.05)
+        self.assertEquals(f.estadisticas_observable(o, vi), esperado)
 
 if __name__ == "__main__":
     unittest.main()

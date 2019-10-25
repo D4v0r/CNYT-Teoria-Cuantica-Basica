@@ -65,7 +65,7 @@ def estadisticas_observable(o, vi):
     if(c.es_hermitiana(o)):
         S = varianza(o, vi)
         
-    return E, S
+    return round(E, 1), round(S, 2)
 
     
     
