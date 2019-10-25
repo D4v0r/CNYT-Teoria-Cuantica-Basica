@@ -19,7 +19,7 @@
    ```
  - Función para hallar las estadisticas de un observable:
    ```
-    calculadora_estadistica_observables(o, vi):
+    estadisticas_observables(o, vi):
     """
     Retorna el valor eperado E y la varianza S del observable
     Parametros:
