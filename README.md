@@ -29,6 +29,11 @@
    ```
  - Función para hallar los valores propios y el vector propio de un observable:
    ```
+    valores_vectores_propios(observable, vi):
+    """
+        observable: observable del que se quieren obtener los valores propios y vectores propios
+        vi: vector de estado inicial (ket)
+    """
    ```
 
 ### Acerca De
