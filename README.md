@@ -44,7 +44,7 @@ Si tiene git use:
 	```
 
 Si no, use las herramientas que la plataforma github le ofrece para descargar este repositorio.
-Guarde esta carpeta en un lugar confiable y ejecute el archivo pruebas.py para verificar el funcionamiento de esta libreria
+Guarde esta carpeta en un lugar confiable y ejecute el archivo funciones_test.py para verificar el funcionamiento de esta libreria
 
 ### Ejecucion de Pruebas
 En la consola de su equipo  diririjase al path donde se encuentra guardada la libreria, un **ejemplo en la consola de WINDOWS** a continuacion:
