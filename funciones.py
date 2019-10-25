@@ -5,6 +5,7 @@ Created on Wed Oct 23 07:41:41 2019
 @author: Davor Cortés
 """
 import complejos as c
+from numpy import linalg as alli
 
 def particula_en_una_recta(n, vi):
     """
@@ -66,6 +67,61 @@ def estadisticas_observable(o, vi):
         S = varianza(o, vi)
         
     return round(E, 1), round(S, 2)
+
+def valores_propios(observable):
+    aux = []
+    for i in range(len(observable)):
+        z = []
+        for j in range(len(observable[0])):
+            a = observable[i][j][0]
+            b = observable[i][j][1]
+            b = eval(str(b)+'j')
+            z.append(a+b)
+        aux.append(z)
+    valores,vectores = alli.eigh(aux)
+    rta = []
+    for i in valores:
+        rta.append(i)
+    return rta
+
+def vectores_propios(observable):
+    aux = []
+    for i in range(len(observable)):
+        z = []
+        for j in range(len(observable[0])):
+            a = observable[i][j][0]
+            b = observable[i][j][1]
+            b = eval(str(b)+'j')
+            z.append(a+b)
+        aux.append(z)
+    valores,vectores = alli.eigh(aux)
+    rta = []
+    for i in vectores:
+        w = []
+        for j in i:
+            aux = str(j)
+            b = aux.index('j')
+            a = b
+            for i in range(len(aux)):
+                if aux[::-1][i] == '-' or aux[::-1][i] == '+':
+                    a = i
+                    break
+            try:
+                a = len(aux)-a
+                tupla = (float(aux[1:a-1]),float(aux[a:b]))
+                w.append(tupla)
+            except ValueError:
+                tupla = (0,float(aux[:b]))
+                w.append(tupla)
+        rta.append(w)
+    return rta
+
+def valores_vectores_propios(observable, vi):
+    """
+        observable: observable del que se quieren obtener los valores propios y vectores propios
+        vi: vector de estado inicial (ket)
+    """
+    return valores_propios(observable)
 
     
     

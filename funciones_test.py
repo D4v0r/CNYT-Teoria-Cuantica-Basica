@@ -14,7 +14,7 @@ class Test_funciones(unittest.TestCase):
         esperado = [0.025, 0.0425, 0.1862, 0.26, 0.0925, 0.0, 0.0925, 0.26, 0.0312, 0.01]
         self.assertEquals(f.particula_en_una_recta(n, vi), esperado)
         
-    def estadisticas_observable(self):
+    def test_estadisticas_observable(self):
         o = [[(0,0), (0,-1/2), (0,-1), (-7/2,0)],
              [(0,1/2), (0,0), (7/2,0), (0,-1)],
              [(0,1), (7/2,0), (0,0), (0,-1/2)],
@@ -23,6 +23,19 @@ class Test_funciones(unittest.TestCase):
         vi = [(-2, 1), (1, 0), (0,-1), (3,2)]
         esperado = (1.9, 13.05)
         self.assertEquals(f.estadisticas_observable(o, vi), esperado)
+    
+    def test_valores_vectores_propios(self):
+        o = [[(0,0), (0,-1/2), (0,-1), (-7/2,0)],
+             [(0,1/2), (0,0), (7/2,0), (0,-1)],
+             [(0,1), (7/2,0), (0,0), (0,-1/2)],
+             [(-7/2,0), (0,1), (0,1/2), (0,0)]]
+        vi = [(-2, 1), (1, 0), (0,-1), (3,2)]
+        esperado = set([-4,5,2,-3])
+        obtenido = f.valores_vectores_propios(o, vi)
+        obtenido = set([ round(valor, 0) for valor in obtenido])
+        self.assertEquals(esperado, obtenido)
+        
+        
 
 if __name__ == "__main__":
     unittest.main()
