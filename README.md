@@ -54,12 +54,7 @@ En la consola de su equipo  diririjase al path donde se encuentra guardada la li
 Para ejecutar las pruebas asegurese de tener python instalado y puesto en el **path** de su computador, ejecute el siguiente comando (EN WINDOWS):
 
 	```
-		py funciones.py
-	```
-y Para las pruebas de los experimentos:
-
-	```
-		py pruebasEjercicios.py
+		py funciones_test.py
 	```
 Si estas arrojan un error de compilacion o algo por el estilo consulte la version de python  y en que sistema operativo(SO) esta corriendo las pruebas
  
