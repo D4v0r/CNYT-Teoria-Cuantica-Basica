@@ -35,7 +35,7 @@
         vi: vector de estado inicial (ket)
     """
    ```
-## 4. Instalacion de la Libreria
+### Instalacion de la Libreria
 
 Descargue el repositorio y almacene todos los archivos descargados en un solo paquete
 Si tiene git use:
