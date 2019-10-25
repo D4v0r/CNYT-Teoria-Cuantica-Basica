@@ -32,9 +32,8 @@ def esperanza(o, vi):
     #Normalizar el ket o vector inicial
     modulo_v = c.modulo_vector(vi)
     normalizado = c.vector_x_escalar(vi, 1/modulo_v)
-    
-    print(vi, normalizado)
-    return c.producto_interno_vectorial(c.accion_matriz_vector(o, vi), normalizado)
+    vec = c.accion_matriz_vector(o, normalizado)
+    return (c.producto_interno_vectores(normalizado, vec))[0][0]
 
 def varianza(o, vi):
     """
@@ -47,12 +46,12 @@ def varianza(o, vi):
     
     #Normalizar el ket o vector inicial
     modulo_v = c.modulo_vector(vi)
-    vi = c.vector_x_escalar(vi, 1/modulo_v)
+    normalizado = c.vector_x_escalar(vi, 1/modulo_v)
     
     temp = c.matriz_x_escalar(c.identidad(len(o)), E)
-    temp = c.suma_de_matrices(o, c.matriz_x_escalar(o, -1))
+    temp = c.resta_de_matrices(o, temp)
     cuadrada = c.multiplicar_matrices_complejas(temp, temp)
-    return esperanza(cuadrada, vi)
+    return esperanza(cuadrada, normalizado)
 
 def estadisticas_observable(o, vi):
     """

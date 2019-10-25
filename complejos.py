@@ -10,7 +10,7 @@ def suma(c1, c2):
     
     a, b = c1
     c, d = c2
-    return (round(float(a + c), 2), round(float(b + d), 2))
+    return (float(a + c), float(b + d))
 
 def producto(c1, c2):
     '''Esta función realiza el producto de dos números complejos c1 y c2 en notación rectangular.
@@ -20,7 +20,7 @@ def producto(c1, c2):
     
     a, b = c1
     c, d = c2
-    return (round(float(a * c - b * d), 2), round(float(a * d + b * c), 2))
+    return (float(a * c - b * d), float(a * d + b * c))
 
 def resta(c1, c2):
     '''Esta función realiza la resta de dos números complejos c1 y c2 en notación rectangular.
@@ -113,6 +113,16 @@ def suma_de_vectores(vectorA, vectorB):
             vectorC.append(suma(elemento[0], elemento[1]))
     return vectorC
 
+def resta_de_vectores(vectorA, vectorB):
+    '''Retorna un Vector C = VectorA - VectorB
+       VectorA, VectorB, VectorC : vectores complejos'''
+    if len(vectorA) != len(vectorB): raise 'Esta operacion esta indefinida'
+    else:
+        vectorC = []
+        for elemento in zip(vectorA, vectorB):
+            vectorC.append(resta(elemento[0], elemento[1]))
+    return vectorC
+
 def vector_inverso_aditivo(vectorA):
     '''Retorna el VectorB = (-1) * VectorA
        VectorA, VectorB : Vectores complejos '''
@@ -133,6 +143,16 @@ def suma_de_matrices(matrizA, matrizB):
         matrizC = []
         for elemento in zip(matrizA, matrizB):
             matrizC.append(suma_de_vectores(elemento[0], elemento[1]))
+    return matrizC
+
+def resta_de_matrices(matrizA, matrizB):
+    '''Retorna la matrizC como resta de la matrizA y matrizB
+       matrizA, matrizB, matrizC : matrices de complejos'''
+    if len(matrizA) != len(matrizB): raise 'Operacion Indefinida'
+    else:
+        matrizC = []
+        for elemento in zip(matrizA, matrizB):
+            matrizC.append(resta_de_vectores(elemento[0], elemento[1]))
     return matrizC
 
 def matriz_inverso_aditivo(matrizA):
